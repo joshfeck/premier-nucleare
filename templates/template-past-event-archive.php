@@ -4,6 +4,10 @@
 */
 
 get_header();
+?>
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+<?php
 // Display the event status banner
   if ( EE_Registry::instance()->CFG->template_settings->EED_Events_Archive->display_status_banner ) {
     add_filter( 'the_title', array( 'EED_Events_Archive', 'the_title' ), 100, 2 );
@@ -55,4 +59,9 @@ get_header();
   remove_filter( 'posts_where', 'custom_posts_where_sql_for_only_expired' );
 
 wp_reset_postdata();
-get_footer();
+?>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>

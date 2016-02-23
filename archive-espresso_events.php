@@ -10,6 +10,8 @@ get_header();
 
 // echo '<br/><h6 style="color:#2EA2CC;">'. __FILE__ . ' &nbsp; <span style="font-weight:normal;color:#E76700"> Line #: ' . __LINE__ . '</span></h6>';
 ?>
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
 <ul class="nav nav-tabs nav-events" role="tablist">
   <li <?php echo ( ! is_search() ? 'class="active"' : ''); ?>><a href="/events">Upcoming Events</a></li>
   <li <?php echo ( is_search() ? 'class="active"' : ''); ?>><a href="/past-events">Past Events</a></li>
@@ -46,5 +48,8 @@ get_header();
     get_template_part( 'templates/searchform-events' );
 
 	endif;
-
-get_footer();
+	?>
+		</main><!-- #main -->
+	</div><!-- #primary -->
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
